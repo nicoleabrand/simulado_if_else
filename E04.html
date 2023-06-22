@@ -7,8 +7,39 @@
     //Se o usuário for "Programador" e trabalhar mais que 8 horas diárias, o programa deverá calcular um adicional de 30% (30/100) na sua remuneração. Apresente também quanto recebe por hora, já com o adicional previsto.
 
     //ENTRADA
+    const remuneracao = Number(prompt(`Quantos sua remuneração mensal?`).trim().toUpperCase())
+    const horas = Number(prompt(`Quantas horas trabalha por dia?`).trim().toUpperCase())
+    const cargo = prompt(`Qual o cargo que ocupa? Use E(estagiário) e P(programador)`)
 
-
+    if (cargo=="E") {
+        if (horas<=6) {
+            pdia=remuneracao/20
+            phora= pdia/horas
+            alert(`Você recebe R$${phora} por hora`)
+        }
+        else if (horas>6) {
+            salario=remuneracao*0.5
+            pdia=remuneracao/20
+            phora= pdia/horas
+            alert(`Precisa ser contratado! Você recebe R$${phora} por hora e seu salário final é de R$${salario}`)
+        }
+    }
+    else if (cargo=="P") {
+        if (horas<=8) {
+            pdia=remuneracao/20
+            phora= pdia/horas
+            alert(`Você recebe R$${phora} por hora`)
+        }
+        else if (horas>8) {
+            salario=remuneracao*0.3
+            pdia=remuneracao/20
+            phora= pdia/horas
+            alert(`Você recebe R$${phora} por hora e seu salário final é de R$${salario}`)
+        }
+    }
+    else {
+        alert(`Inválido, tente novamente`)
+    }
     //PROCESSAMENTO
 
 

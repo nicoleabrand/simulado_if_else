@@ -9,8 +9,46 @@
     */
 
     //ENTRADA
+    const baixa = Number(prompt(`Quantas consultas de baixa complexidade atende por dia?`).trim())
+    const media = Number(prompt(`Quantas consultas de média complexidade atende por dia?`).trim())
+    const alta = Number(prompt(`Quantas consultas de alta complexidade atende por dia?`).trim())
 
-
+    const min = (baixa*15) + (media*40) + (alta*75)
+    const horas= min/60
+    
+    if(Number.isInteger(horas)) {
+    mensagemfi= `Você deverá trabalhar ${horas} horas para realizar todos os atendimentos `
+    if (horas<8){ 
+        salario = horas*50
+        mensagemfi+=`e seu salário será de ${salario}`
+    }
+    else if (horas>=8 && horas<=10) {
+        salario = horas*75
+        mensagemfi+=`e seu salário será de ${salario}`
+    }
+    else if (horas>10) {
+        salario = horas*90
+        mensagemfi+=`e seu salário será de ${salario}`
+    }
+}
+    else if (Number.isInteger(horas)==false) {
+    const minutos= min-horas
+    const horastot= horas-min
+    mensagemfi= `Você deverá trabalhar ${horastot} horas e ${minutos} minutos para realizar todos os atendimentos `
+    if (horas<8){ 
+        salario = horas*50
+        mensagemfi+=`e seu salário será de ${salario}`
+    }
+    else if (horas>=8 && horas<=10) {
+        salario = horas*75
+        mensagemfi+=`e seu salário será de ${salario}`
+    }
+    else if (horas>10) {
+        salario = horas*90
+        mensagemfi+=`e seu salário será de ${salario}`
+    }
+}
+alert(mensagemfi)
     //PROCESSAMENTO
 
     

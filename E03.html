@@ -1,15 +1,42 @@
 <script>
     //PROBLEMA: Viajar para algum lugar
     //Peça para o usuário informar para qual estado deseja realizar a viagem. (Rio Grande do Sul-RS ou Minas Gerais-MG). Peça também para informar quantos dias ficará em viagem. O usuário também deverá informar "quantos dinheiros" (R$) possui para gastar na viagem.
-    
+
     //Considere que o custo diário de viagem para "RS" será de R$ 180,00 (180) e o custo diário de viagem para "MG" será de R$ 210,00 (210).
-    
+
     //Calcule se o usuário possui dinheiro suficiente para realizar a viagem para o destino que pretende. Se o usuário puder viajar, o programa apresentará a mensagem "Boa viagem" e quantos dias poderá ficar no destino, além de qual será o custo da viagem. Caso não possa viajar o programa apresentará a mensagem "Sem Férias" e também apresentará "quantos dinheiros" (R$) estão faltando para realizar a viagem.
 
     //ENTRADA
+    const estado = prompt(`Para qual estado irá viajar? Responda com RS(Rio Grande do Sul ou MG(Minas Gerais)`).trim().toUpperCase()
+    const dias = Number(prompt(`Quantos dias ficará na viagem?`).trim())
+    const dinheiro = Number(prompt(`Quantos reais possui para gastar na viagem?`).trim())
 
-
-    //PROCESSAMENTO
+    if (estado=="RS") {
+        custo = dias * 180
+        viagem = dinheiro - custo
+        if (viagem < 0) {
+            alert(`Sem férias, faltam R$${viagem} para poder realizar a viagem`.replace("-",""))
+        }
+        else if (viagem > 0) {
+            diaria = custo / 180
+            alert(`Boa viagem! Você poderá ficar ${diaria} dias no destino, e o custo da viagem será de ${custo}`)
+        }
+    }
+    else if (estado=="MG") {
+        custo = dias * 210
+        viagem = dinheiro - custo
+        if (viagem < 0) {
+            alert(`Sem férias, faltam R$${viagem} para poder realizar a viagem`.replace("-",""))
+        }
+        else if (viagem > 0) {
+            diaria = custo / 180
+            alert(`Boa viagem! Você poderá ficar ${diaria} dias no destino, e o custo da viagem será de ${custo}`)
+        }
+    }
+    else {
+        alert(`Inválido, tente novamente`)
+    }
+    //PROCESSAMENT
 
 
     //SAÍDA
