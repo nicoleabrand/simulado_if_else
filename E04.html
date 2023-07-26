@@ -10,6 +10,9 @@
     const remuneracao = Number(prompt(`Quantos sua remuneração mensal?`).trim().toUpperCase())
     const horas = Number(prompt(`Quantas horas trabalha por dia?`).trim().toUpperCase())
     const cargo = prompt(`Qual o cargo que ocupa? Use E(estagiário) e P(programador)`)
+    let pdia= 0;
+    let phora=0;
+    let salario=0;
 
     if (cargo=="E") {
         if (horas<=6) {

@@ -9,7 +9,9 @@
     //ENTRADA
     const estado = prompt(`Para qual estado irá viajar? Responda com RS(Rio Grande do Sul ou MG(Minas Gerais)`).trim().toUpperCase()
     const dias = Number(prompt(`Quantos dias ficará na viagem?`).trim())
-    const dinheiro = Number(prompt(`Quantos reais possui para gastar na viagem?`).trim())
+    const dinheiro = Number(prompt(`Quantos reais possui para gastar na viagem?`).trim().replace(",","."))
+    let custo =0
+    let viagem= 0
 
     if (estado=="RS") {
         custo = dias * 180
